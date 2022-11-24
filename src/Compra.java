@@ -40,9 +40,10 @@ public class Compra extends Transaccion{
             descuentoFinal = 10;
         }
         int finalDescuento = descuentoFinal;
+        System.out.println("Lista de compra");
         getVendibles().forEach(vendible -> {
             vendible.setCompra(this);
-            System.out.println("Lista de compra");
+
             double precioProducto = vendible.getPrecioLista()*(100 - finalDescuento)/100;
             precioFinal += precioProducto;
             System.out.println(String.format(
@@ -52,6 +53,7 @@ public class Compra extends Transaccion{
                     precioProducto
                     ));
         });
+        System.out.println(getPrecioFinal());
     }
 
 
